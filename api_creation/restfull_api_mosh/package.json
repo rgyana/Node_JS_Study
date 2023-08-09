@@ -1,0 +1,17 @@
+{
+  "name": "restfull_api_mosh",
+  "version": "1.0.0",
+  "description": "crud operation with mosh",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "restfull_api_mosh"
+  ],
+  "author": "Gyana Ranjan Rout",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

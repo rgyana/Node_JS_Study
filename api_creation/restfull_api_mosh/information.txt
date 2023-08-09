@@ -1,0 +1,134 @@
+RESTFULL API
+- in every where there will be client (application) and one server will be there.
+- the conversastion between client and server happens through http protocol.
+- 
+
+INTRODUCING EXPRESS
+const http = require('http');
+
+const server = http.createServer((request, response) => {
+    if (request.url === '/') {
+        response.write("hello world!");
+        response.end();
+    }
+
+    if (request.url === '/api/course') {
+        response.write(JSON.stringify([1, 2, 3]));
+        response.end();
+    }
+});
+
+server.listen(3000);
+console.log("Listening on port 3000...");
+
+- On the above code there is basic way to define port in file and also we have the routes over there.
+- Here we have only two routes thats why we have written two if condition but if there is more then its very difficut to write multiple if condition
+- Because of this the code will not be very maintainable. In this case the frameworks comes to the action which gives us a proper structure.
+- There are many frameworks are there but we will download express js frameworks
+- Command : npm install express
+- After this we need to run the command to install the node pakage : npm init --yes
+
+FIRST WEB SERVER
+- At first we need to create app.js or index.js any file as per our wish. So we have created app.js
+- Inside that file we have to import express mdoule to access all the functionalities of express.
+- This express module returns a function. By convection lets assign it into app variable.
+    const express = require('express');
+    const app = express();
+
+- Now the above code repesents our application.
+- Now this app has bunch of use full methods like get(), post(), put(), delete() ...etc
+- These all functions are call back functions.
+
+- Lets start with GET method
+- This method takes two arguments. First one is URL/ENDPIONT and second one is a callback function().
+- This callback function should have 2 arguments : request and response
+- Now this request object has a bunch of property to know about all go through the express js documentation.
+    app.get('/', (req, res) => {
+    res.send("hello World");
+    })
+
+- On the above code we gonna send the response hello world!
+- The above callback function in aslo known as ROUTE HANDLER.
+- Finally  we need to listen the port.
+    app.listen(3000, () => {
+        console.log("Listening on port 3000...");
+    }) 
+
+- In the listen funtion we have passed two argument, one is port and next one is callback funtion to show something when the PORT will listen.
+
+- Let's put one more GET method
+    app.get('/api/courses', (req, res) => {
+    res.send([1, 2, 3]);
+    })
+
+- In this method we have another route to get the response.
+- In the response we are passing the array of numbers.
+- In this way we don't have to put any if else condtion for any routes so code looks maintained.
+
+- Let's intall one package called nodemon.
+- It is basically we used to run our server so instead of node we can write nodemon.
+- The best benifits of this is we do not have to run our server after every change, only once we need to run and nodemon will moniter all the changes.
+- To install nodemon we use the command: npm install nodemon
+
+ENVIORNMENT VARIABLES
+- One thing we need to improve in this application is we need to set the PORT 3000 dynamically instead of Hard coded value.
+- Because eventually whenever we will deploy this application to hosting evironment then the PORT will be dynamic.
+- To fix this we have one environment object which we can use to make it dynamic.
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, () => {
+    console.log(`Listening on port ${PORT}...`)
+    })
+
+- Now we need to set the PORT so that we can run our application on that PORT.
+- To set the another PORT we need to use the command : set PORT=<PORT NUMBER>
+- Then we can run our application and it will run on the same PORT.
+
+ROUTE PARAMETERS
+    app.get('/api/courses/:id', (req, res) => {
+        res.send(req.params.id);
+    });
+
+- These all are the same process for all methods but little bit changes
+- In this route we are passing one id to access the perticular id and the res we have written req.params.id to get the response of the that id.
+- params we use for the perticular parameter but let's suppose we want response of all the january month then at that time we use query params
+  eg. 
+    app.get('/api/posts/:year/:month', (req, res) => {
+        res.send(req.query);
+    })
+
+- For query params we use ? symbol like: "http://localhost:3000/api/posts/2018/1?sortBy=name"
+- Query parammeter are always stores in object with bunch of key value pair.
+
+HANDLING GET REQUEST
+- Lets define an array of courses.
+    const courses = [
+        { id: 1, name: 'course1' },
+        { id: 2, name: 'course2' },
+        { id: 3, name: 'course3' }
+    ]
+
+- now we have declaired GET method 
+    app.get('/api/courses/:id', (req, res) => {
+        const course = courses.find(c => c.id === parseInt(req.params.id));
+        if (!course) {
+            res.status(404).send("The course with the given ID was invalid");
+        }
+        res.send(course);
+    });    
+
+- on the above code we have given the route and callback function.
+- Then we have one default javascript function for every array is find().
+- We have passed the one argument which should be a function.
+- This function repesents that which course we are looking for that is the same course or not.
+- id always takes as string value that why we have used parseInt.
+- After that we have put if condition for error handle where response will be 404.
+- Now If we will pass any wrong or invalid id then it will give the response status of 404.
+
+HANDING POST REQUEST
+- Like GET method we have POST method also in which we can send data to the server.
+- First we have created normal post method for complet courses
+    app.post('/api/courses', (req, res) => {
+        res.send(courses);
+    });
+
+- Before all of this we have  app.use(.......) <need to complete>   
