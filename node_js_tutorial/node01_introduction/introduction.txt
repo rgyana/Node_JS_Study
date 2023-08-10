@@ -1,0 +1,14 @@
+What is node Js ?
+- Node.js is an open source, cross platform javascript runtime environment.
+- Open source: Source code is publicaly available for sharing and modification
+- Cross platform: Available on MAC, Windows and Linux.
+- JavaScript Runtime Environment: 
+
+Why we learn Node.js ?
+- Build end to end javascript application.
+- A number of major companies like LinkedIn, Netflix, Paypal and have all migrated form other backend technologies to Node.js.
+- Full stack developement is one of the most sought otu skill sets by companies.
+- Huge community support.
+
+Prerequisites
+- Modern JavaScript

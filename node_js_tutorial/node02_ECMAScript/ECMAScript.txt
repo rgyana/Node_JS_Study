@@ -1,0 +1,32 @@
+What is ECMAScript ?
+- In 1993, the first web browser with a user interface called Mosaic was released.
+- In 1994, the lead developers og Mosaic founded a company called Netscape and released a more polished bowrser called Netscape Navigator.
+- Web pages coudl only be static and there was no interactivity after a page was loaded.
+- In 1995, Netscape created a new scripting language called JavaScript.
+- The name was purely for marketing purpose as Java was the hot new language back then.
+
+The Advent to Microsoft
+- In 1995, Microsoft debuted their browser internet Explorer
+- Microsoft realised that JavaScript fundamentally changed the user experience of the web and wanted the same for internet explorer.
+- But there was no specification for them to follow.
+- In 1996, Microsoft reverse-engineered the Naviagator interpreter to create its own scripting language called JScript.
+- The difference made it difficult for developers to make their websites work well in both browser.
+- Best viewed in Netscape adn Best viewed in Internet Explorer badeges became common.
+
+ECMA International
+- In nov 1996, Netscape submitted JavaScriptti ECMA International.
+- It is an industry association dedicated to the standardization of infromation and communication systems.
+- Netscape wanted a standard specification that all browser vender could conform to as it would help keep other implementations consistent across browsers.
+- For each new specification ECMA provides a standard specification and a committee.
+- In case of JavaScript, the standard is called ECMA-262 and the committee that works on ECMA-262 is called Technical committee 39(TC39).
+- ECMA however decided to use the term "ECMAScript" to tald about the offical language.
+- The reason fo this is because oracle (who acquired Microsystem) owns the trademark fo the term "JavaScript".
+- ECMAScript refers to the standard language whereas JavaScript is what we use in practice and builds on the top of ECMAScript.
+
+ECMAScript Versions
+- 1997 : ECMAScript 1
+- 1998 : ECMAScript 2
+- 1999 : ECMAScript 3
+- ECMAScript 4 never released
+- 2009 : ECMAScript 2015(ES6)
+- One Version every year since 2015

@@ -1,0 +1,18 @@
+JavaScript Engine
+- JavaScript code we write cannot be understood by the computer
+- A JavaScript Engine is a program that converts javascript code that developers write into machine code that allowes a computer to perform specific tasks.
+- JavaScript engine are typically developed by web browser venders
+- V8 : Open source javascript engine developed by google for chrome
+- SpiderMonkey : The javascript engine powering Mozilla Firefox
+- JavaScriptCore : Open source javascript engine developed by apple for MAC.\
+- Chakra : A javascript engine for the original microsoft edge (The latest version of edge uses V8).
+
+- V8.dev/docs is the website where we will get all the information about V8 engine.
+- One of the important thing is V8 engine is developed in c++ code.
+
+Crome's V8 Engine & Node.js
+- Crome's V8 engine by google sits at the core of Node.js
+- By embedding V8 into your own c++ application, you can write c++ code that gets executed when a user writes JavaScript code.
+- You can add new features to JavaScript itself.
+- Since c++ is greater for lower level operation like file handling, database connections and network opeations, by embedding V8 into your own c++ pragram, you have the power to add all of that fucntionlity in JavaScript.
+- The c++ program we are talking about is Node.js
